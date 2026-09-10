@@ -4,29 +4,207 @@
 <meta charset="UTF-8">
 <title>Page 1: Welcome — LinkedIn Lab</title>
 <style>
-  body { font-family: Arial, sans-serif; max-width: 760px; margin: 0; color: #1a1a1a; line-height: 1.6; }
-  h1 { font-size: 20px; color: #004182; margin-top: 0; margin-bottom: 16px; }
-  h2 { font-size: 16px; color: #004182; margin-top: 20px; margin-bottom: 12px; }
-  p { margin-top: 0; margin-bottom: 12px; }
-  ul { margin-top: 4px; margin-bottom: 12px; padding-left: 20px; }
-  li { margin-bottom: 8px; }
-  .placeholder { color: #888; font-style: italic; }
-  a { color: #0073b1; text-decoration: none; }
-  a:hover { text-decoration: underline; }
+  body { 
+    font-family: 'Segoe UI', Trebuchet MS, Arial, sans-serif; 
+    max-width: 760px; 
+    margin: 0; 
+    color: #1a1a1a; 
+    line-height: 1.6;
+    background: linear-gradient(135deg, #f5f7fa 0%, #f9fafb 100%);
+    padding: 20px;
+  }
+  
+  .hero-section {
+    background: linear-gradient(135deg, #004182 0%, #0073b1 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 65, 130, 0.2);
+  }
+  
+  .hero-section h1 {
+    font-size: 28px;
+    margin: 0 0 12px 0;
+    font-weight: 600;
+  }
+  
+  .hero-section p {
+    font-size: 16px;
+    margin: 0;
+    opacity: 0.95;
+    font-weight: 300;
+  }
+  
+  .logo-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+  
+  h1 { 
+    font-size: 24px; 
+    color: #004182; 
+    margin-top: 0; 
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+  
+  h2 { 
+    font-size: 16px; 
+    color: #004182; 
+    margin-top: 24px; 
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+  
+  p { 
+    margin-top: 0; 
+    margin-bottom: 14px;
+    color: #333;
+  }
+  
+  .intro-text {
+    font-size: 17px;
+    font-weight: 500;
+    color: #004182;
+    margin-bottom: 20px;
+    line-height: 1.8;
+  }
+  
+  ul { 
+    margin-top: 12px; 
+    margin-bottom: 16px; 
+    padding-left: 24px;
+    list-style: none;
+  }
+  
+  li { 
+    margin-bottom: 12px;
+    padding-left: 28px;
+    position: relative;
+    color: #333;
+    font-size: 15px;
+  }
+  
+  li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #0073b1;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .outcomes-container {
+    background: white;
+    border: 2px solid #e8f0f8;
+    border-radius: 8px;
+    padding: 24px;
+    margin: 24px 0;
+  }
+  
+  .outcomes-container h2 {
+    color: #004182;
+    margin-top: 0;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    opacity: 0.8;
+  }
+  
+  .attendance-highlight {
+    background: linear-gradient(135deg, #f0f7ff 0%, #e8f4ff 100%);
+    border-left: 5px solid #0073b1;
+    padding: 20px;
+    margin: 24px 0;
+    border-radius: 6px;
+  }
+  
+  .attendance-highlight strong {
+    color: #004182;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+  
+  .attendance-highlight ul {
+    margin: 0;
+    padding-left: 24px;
+  }
+  
+  .attendance-highlight li {
+    padding-left: 28px;
+    font-size: 14px;
+  }
+  
+  .placeholder { 
+    color: #999; 
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 6px;
+    margin: 20px 0;
+  }
+  
+  a { 
+    color: #0073b1; 
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  a:hover { 
+    text-decoration: underline;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #004182 0%, #0073b1 100%);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 16px;
+    box-shadow: 0 2px 8px rgba(0, 65, 130, 0.2);
+    transition: transform 0.2s;
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
 </style>
 </head>
 <body>
 
-<h1>Welcome: Getting Started on LinkedIn</h1>
+<div class="hero-section">
+  <div class="logo-icon">💼</div>
+  <h1>Welcome to Your LinkedIn Lab</h1>
+  <p>Build Your Professional Network for Project Management Success</p>
+</div>
 
-<p>Welcome to your LinkedIn Lab. LinkedIn is an ongoing career project, not just a social media platform — something that matters from now through the rest of your degree, not only after graduation.</p>
+<p class="intro-text">LinkedIn is an ongoing career project, not just a social media platform — something that matters from now through the rest of your degree, not only after graduation.</p>
 
-<p>By the end of this Pathway, you will:</p>
-<ul>
-  <li>Get started on LinkedIn (or optimise your existing account)</li>
-  <li>Understand why LinkedIn matters for Project Management careers</li>
-  <li>Tailor your LinkedIn profile and make your first connections</li>
-</ul>
+<div class="outcomes-container">
+  <h2>By the End of This Pathway, You Will:</h2>
+  <ul>
+    <li>Get started on LinkedIn (or optimise your existing account)</li>
+    <li>Understand why LinkedIn matters for Project Management careers</li>
+    <li>Tailor your LinkedIn profile and make your first connections</li>
+  </ul>
+</div>
+
+<div class="attendance-highlight">
+  <strong>📌 Mark Your Attendance</strong>
+  <p>By confirming your attendance at this workshop, you acknowledge that you're ready to begin your LinkedIn Lab journey and commit to building your professional presence.</p>
+  <ul>
+    <li>Ready to begin the LinkedIn Lab pathway</li>
+    <li>Understand the 3 learning outcomes</li>
+    <li>Commit to completing the pathway</li>
+  </ul>
+</div>
 
 <p class="placeholder">[IMAGE PLACEHOLDER: LinkedIn logo / branded banner image]</p>
 
