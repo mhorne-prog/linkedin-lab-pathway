@@ -4,29 +4,303 @@
 <meta charset="UTF-8">
 <title>Page 2: Quick Poll — LinkedIn Lab</title>
 <style>
-  body { font-family: Arial, sans-serif; max-width: 760px; margin: 0; color: #1a1a1a; line-height: 1.6; }
-  h1 { font-size: 20px; color: #004182; margin-top: 0; margin-bottom: 16px; }
-  h2 { font-size: 16px; color: #004182; margin-top: 20px; margin-bottom: 12px; }
-  p { margin-top: 0; margin-bottom: 12px; }
-  ul { margin-top: 4px; margin-bottom: 12px; padding-left: 20px; }
-  li { margin-bottom: 8px; }
-  .highlight { background-color: #f2f7fc; border-left: 4px solid #004182; padding: 12px; margin: 16px 0; border-radius: 4px; }
+  body { 
+    font-family: 'Segoe UI', Trebuchet MS, Arial, sans-serif; 
+    max-width: 760px; 
+    margin: 0; 
+    color: #1a1a1a; 
+    line-height: 1.6;
+    background: linear-gradient(135deg, #f5f7fa 0%, #f9fafb 100%);
+    padding: 20px;
+  }
+  
+  .hero-section {
+    background: linear-gradient(135deg, #0073b1 0%, #004182 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 73, 130, 0.2);
+  }
+  
+  .hero-section h1 {
+    font-size: 28px;
+    margin: 0 0 12px 0;
+    font-weight: 600;
+  }
+  
+  .hero-section p {
+    font-size: 16px;
+    margin: 0;
+    opacity: 0.95;
+    font-weight: 300;
+  }
+  
+  .logo-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+  
+  h2 { 
+    font-size: 18px; 
+    color: #004182; 
+    margin-top: 24px; 
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+  
+  h3 {
+    font-size: 16px;
+    color: #004182;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+  
+  p { 
+    margin-top: 0; 
+    margin-bottom: 14px;
+    color: #333;
+    font-size: 15px;
+  }
+  
+  .intro-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.8;
+  }
+  
+  .poll-container {
+    background: white;
+    border: 2px solid #e8f0f8;
+    border-radius: 8px;
+    padding: 28px;
+    margin: 24px 0;
+  }
+  
+  .poll-question {
+    margin-bottom: 28px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e8f0f8;
+  }
+  
+  .poll-question:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  
+  .question-number {
+    display: inline-block;
+    background: linear-gradient(135deg, #004182 0%, #0073b1 100%);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: 600;
+    margin-right: 12px;
+    font-size: 14px;
+  }
+  
+  .question-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: #004182;
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+  
+  .question-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 0;
+    margin-left: 44px;
+    font-style: italic;
+  }
+  
+  .importance-section {
+    background: linear-gradient(135deg, #f0f7ff 0%, #e8f4ff 100%);
+    border-left: 5px solid #0073b1;
+    padding: 20px;
+    margin: 24px 0;
+    border-radius: 6px;
+  }
+  
+  .importance-section p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  
+  ul { 
+    margin-top: 0; 
+    margin-bottom: 16px; 
+    padding-left: 24px;
+    list-style: none;
+  }
+  
+  li { 
+    margin-bottom: 10px;
+    padding-left: 28px;
+    position: relative;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #0073b1;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .activity-box {
+    background: white;
+    border: 2px solid #fff8dc;
+    border-left: 5px solid #ffa500;
+    border-radius: 8px;
+    padding: 24px;
+    margin: 24px 0;
+  }
+  
+  .activity-title {
+    color: #004182;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .activity-icon {
+    font-size: 24px;
+    margin-right: 12px;
+  }
+  
+  .activity-instructions {
+    background: #fffaf0;
+    padding: 16px;
+    border-radius: 6px;
+    margin: 16px 0;
+  }
+  
+  .activity-instructions ol {
+    margin: 0;
+    padding-left: 24px;
+  }
+  
+  .activity-instructions li {
+    margin-bottom: 12px;
+    padding-left: 8px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .timer {
+    display: inline-block;
+    background: #ffa500;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 8px;
+  }
+  
+  .tip-box {
+    background: #f0f7ff;
+    border-left: 4px solid #0073b1;
+    padding: 16px;
+    border-radius: 6px;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  
+  .tip-box strong {
+    color: #004182;
+  }
 </style>
 </head>
 <body>
 
-<h1>Quick Poll: Is LinkedIn for Me?</h1>
+<div class="hero-section">
+  <div class="logo-icon">📊</div>
+  <h1>Quick Poll: Is LinkedIn for Me?</h1>
+  <p>Reflect on Your LinkedIn Knowledge & Explore the Possibilities</p>
+</div>
 
-<p>Before we dive in, take a moment to reflect:</p>
-<ul>
-  <li>Do you already have a LinkedIn account?</li>
-  <li>What do you think LinkedIn is useful for?</li>
-  <li>What questions do you have about LinkedIn?</li>
-</ul>
+<p class="intro-text">Before we dive deeper into building your LinkedIn profile, let's take a moment to understand where you're starting from and what you already know about professional networking.</p>
 
-<div class="highlight">
-<p><strong>Why this matters:</strong></p>
-<p>Networking and visibility in Project Management careers is highly important — this Pathway will show you how to use LinkedIn effectively to showcase your skills and experience throughout your degree.</p>
+<div class="poll-container">
+  <div class="poll-question">
+    <div>
+      <span class="question-number">1</span>
+      <span class="question-text">Do you already have a LinkedIn account?</span>
+    </div>
+    <p class="question-description">Think about whether you've created an account before, and if so, how active you've been on the platform.</p>
+  </div>
+  
+  <div class="poll-question">
+    <div>
+      <span class="question-number">2</span>
+      <span class="question-text">What do you think LinkedIn is useful for?</span>
+    </div>
+    <p class="question-description">Consider both what you know about LinkedIn from personal experience or others, and how you think it might benefit your career in Project Management.</p>
+  </div>
+  
+  <div class="poll-question">
+    <div>
+      <span class="question-number">3</span>
+      <span class="question-text">What questions do you have about LinkedIn?</span>
+    </div>
+    <p class="question-description">Don't hold back! Whether it's about safety, privacy, how to use features, or career strategy — write down what you want to know.</p>
+  </div>
+</div>
+
+<div class="importance-section">
+  <h3>💡 Why This Matters</h3>
+  <p>Networking and visibility in Project Management careers is highly important. This Pathway will show you how to use LinkedIn effectively to showcase your skills and experience throughout your degree — and build genuine professional connections that matter for your career.</p>
+</div>
+
+<div class="activity-box">
+  <div class="activity-title">
+    <div class="activity-icon">✍️</div>
+    <div>Your Reflection Activity <span class="timer">10 minutes</span></div>
+  </div>
+  
+  <p><strong>In this activity, you'll respond to the three poll questions above.</strong> We're not looking for perfect answers — we want to hear your honest thoughts and questions.</p>
+  
+  <div class="activity-instructions">
+    <p><strong>How to complete this activity:</strong></p>
+    <ol>
+      <li>
+        <strong>Question 1:</strong> Briefly explain your current LinkedIn situation (e.g., "Yes, I have an account but haven't used it much" or "No, I haven't created one yet")
+      </li>
+      <li>
+        <strong>Question 2:</strong> List 2-3 things you think LinkedIn could be useful for, based on what you know or have heard
+      </li>
+      <li>
+        <strong>Question 3:</strong> Write 1-2 genuine questions you have about LinkedIn (e.g., "Is LinkedIn safe for privacy?" or "How do I approach someone for a connection?")
+      </li>
+    </ol>
+  </div>
+  
+  <div class="tip-box">
+    <strong>💬 Pro Tip:</strong> This is a low-stakes reflection. Your honest answers help us understand your starting point and tailor the rest of the Pathway to your needs. There are no "wrong" answers here!
+  </div>
+</div>
+
+<div class="importance-section">
+  <h3>🎯 What Happens Next</h3>
+  <p>Your responses to this poll help us understand where you're starting from. Throughout the rest of this Pathway, we'll address common questions and build practical skills. If you're a LinkedIn novice, don't worry — by the end of Page 9, you'll have a polished profile and your first meaningful connections.</p>
 </div>
 
 </body>
